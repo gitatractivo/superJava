@@ -1,0 +1,22 @@
+package old.latest.oops.properties.interfa;
+
+public class ElectricEng implements Engine{
+
+    @Override
+    public void start() {
+        System.out.println("Electric Engine start");
+
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Electric Engine stop");
+
+    }
+
+    @Override
+    public void acc() {
+        System.out.println("Electric Engine accelerate");
+
+    }
+}
