@@ -5,7 +5,7 @@ public class _21_142 {
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode result = new ListNode();
         ListNode head = result;
-        
+        //this is a change
         while(l1!=null && l2!=null){
             if(l1.val<l2.val){
                 result.next = l1;
