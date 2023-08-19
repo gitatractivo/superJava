@@ -5,7 +5,12 @@ import java.util.Locale;
 public class _125 {
     public static void main(String[] args) {
         String s = ".";
-        System.out.println(isPalindrome4(s));
+//        System.out.println(isPalindrome4(s));
+
+        String test = "A man, a plan, a canal: Panama";
+        System.out.println(practice(test));
+//        System.out.println(isPalindrome2(test));
+
 
     }
     public static boolean isPalindrome(String s) {
@@ -18,13 +23,7 @@ public class _125 {
         if(s.length()%2!=0) t.deleteCharAt(t.length()-1);
         return one.equals(t.toString());
     }
-    public static boolean isPalindrome2(String s) {
-        s=s.replaceAll("[^a-zA-Z0-9]", "").toLowerCase(Locale.ROOT);
-        for (int i = 0; i < s.length()/2; i++) {
-            if(s.charAt(i)!=s.charAt(s.length()-1-i)) return false;
-        }
-        return true;
-    }
+
     public static boolean isPalindrome3(String s) {
         s=s.toLowerCase();
 //        s=s.trim();
@@ -64,6 +63,36 @@ public class _125 {
 
         }
         if(count<1) return false;
+        return true;
+    }
+    public static boolean practice(String s){
+        s= s.toLowerCase();
+        int i =0,j=s.length()-1;
+        while (i<j){
+            char a = s.charAt(i);
+            char b = s.charAt(j);
+            if(!Character.isLetterOrDigit(a)){
+                i++;
+                continue;
+            }
+            if(!Character.isLetterOrDigit(b)){
+                j--;
+                continue;
+            }
+            if(a!=b){
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+
+    }
+    public static boolean isPalindrome2(String s) {
+        s=s.replaceAll("[^a-zA-Z0-9]", "").toLowerCase(Locale.ROOT);
+        for (int i = 0; i < s.length()/2; i++) {
+            if(s.charAt(i)!=s.charAt(s.length()-1-i)) return false;
+        }
         return true;
     }
 }

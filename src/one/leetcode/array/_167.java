@@ -6,7 +6,7 @@ public class _167 {
     public static void main(String[] args) {
         int[] arr = {3,24,50,79,88,150,345};
         int target = 200;
-        System.out.println(Arrays.toString(twoSum2(arr,target)));
+        System.out.println(Arrays.toString(practice(arr,target)));
     }
 
     private static int[] twoSum2(int[] arr, int target) {
@@ -65,5 +65,22 @@ public class _167 {
             return s + 1;
         }
         return s;
+    }
+
+    public static int[] practice(int[] numbers,int target){
+        int i = 0;
+        int j = numbers.length-1;
+        while(i<j){
+            int a = numbers[i];
+            int b = numbers[j];
+            if(a+b==target) return new int[]{i+1,j+1};
+            if(a+b<target){
+                i++;
+                continue;
+            }
+            j--;
+        }
+
+        return new int[2];
     }
 }

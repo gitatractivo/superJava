@@ -12,9 +12,9 @@ public class Main {
 //        System.out.println(bt.sum());
 //        System.out.println(bt.size());
 //        bt.traversals();
-//        bt.levelOrder();
+        bt.levelOrder();
 //        bt.iterativeTraversal();
-        bt.path(70);
+//        bt.path(70);
 //        bt.reverse();
 //        bt.levelOrder();
 //        bt.kdown(2);

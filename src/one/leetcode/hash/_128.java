@@ -2,6 +2,7 @@ package one.leetcode.hash;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Hashtable;
 
 public class _128 {
     public static void main(String[] args) {
