@@ -55,14 +55,11 @@ public class SortingRecursive {
             select(arr,i+1,1,arr[0],0);
             return;
         }
-
         if(max<arr[j]) {
             max=arr[j];
             maxI=j;
 
         }
-
-
         select(arr,i,j+1,max,maxI);
 
 
@@ -75,7 +72,6 @@ public class SortingRecursive {
             insertion(arr,i+1,i+1);
             return;
         }
-
         if(j>0&&arr[j]<arr[j-1]){
             swap(arr,j,j-1);
             insertion(arr,i,j-1);

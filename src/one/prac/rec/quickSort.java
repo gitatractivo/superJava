@@ -25,7 +25,6 @@ public class quickSort {
             }
             while(arr[e]>pivot){
                 e--;
-
             }
             if(s<=e){
                 swap(arr,s,e);

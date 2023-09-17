@@ -1,13 +1,16 @@
 package one.prac.rec;
 
 import java.util.Arrays;
+import java.util.PriorityQueue;
 
 public class mergeSort {
     public static void main(String[] args) {
         int[] arr = {5,6,7,8,9,0,1,2,3,4};
+        System.out.println("hello");
 
-//        mergeSortInPlace(arr,0,arr.length);
-        System.out.println(Arrays.toString(mergeSort(arr)));
+        mergeSortInPlace(arr,0,arr.length-1);
+        System.out.println("hello");
+        System.out.println(Arrays.toString((arr)));
     }
     public static int[] mergeSort(int[] arr){
         if(arr.length==1)   return arr;
@@ -38,39 +41,67 @@ public class mergeSort {
     }
 
     public static void mergeSortInPlace(int[] arr,int s, int e){
-        if(e-s==1)   return;
+        if(e-s==0)   return;
         int mid = (s+e)/2;
+        System.out.println(" "+s+" "+e+" "+arr[s]+" "+arr[e]);
 
         mergeSortInPlace(arr,s,mid);
-        mergeSortInPlace(arr,mid,e);
+        mergeSortInPlace(arr,mid+1,e);
         mergeInPlace(arr,s,mid,e);
     }
-    public static void mergeInPlace(int[] arr, int s ,int mid, int e){
-        int i = s, j=mid,z=0;
+//    public static void mergeInPlace(int[] arr, int s ,int mid, int e){
+//        int i = s, j=mid,z=0;
+//
+//        int[] ans = new int[e-s];
+//        while(i<mid && j<e){
+//            if(arr[i]>arr[j]){
+//                ans[z]=arr[j];
+//                j++;
+//            }
+//            else{
+//                ans[z]=arr[i];
+//                i++;
+//            }
+//            z++;
+//        }
+//        while(i<mid){
+//            ans[z]=arr[i];
+//            i++;
+//            z++;
+//        }
+//        while(j<e){
+//            ans[z]=arr[j];
+//            j++;
+//            z++;
+//        }
+//        System.arraycopy(ans, 0, arr, s + 0, ans.length);
+//    }
+public static void mergeInPlace(int[] arr, int s ,int mid, int e){
+    int i = s, j=mid,z=0;
 
-        int[] ans = new int[e-s];
-        while(i<mid && j<e){
-            if(arr[i]>arr[j]){
-                ans[z]=arr[j];
-                j++;
-            }
-            else{
-                ans[z]=arr[i];
-                i++;
-            }
-            z++;
-        }
-        while(i<mid){
-            ans[z]=arr[i];
+    while(i<mid+1 && j<e){
+        if(arr[i]<arr[j]){
             i++;
-            z++;
         }
-        while(j<e){
-            ans[z]=arr[j];
+        else{
+            int temp = arr[j];
+            int in= j;
+            while(in>s&&in>=i){
+                arr[in]=arr[in-1];
+            }
+            arr[i]=temp;
+            i++;
             j++;
-            z++;
         }
-        System.arraycopy(ans, 0, arr, s + 0, ans.length);
+        z++;
     }
+    while(i<mid){
+        i++;
+    }
+    while(j<e){
+        j++;
+        z++;
+    }
+}
 
 }

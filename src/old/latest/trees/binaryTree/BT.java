@@ -119,9 +119,7 @@ public class BT {
         if(node==null)  return;
         System.out.println("Pre: " + node);
         travers(node.left);
-        System.out.println("In: " + node);
         travers(node.right);
-        System.out.println("Post: " + node);
 
     }
 

@@ -34,10 +34,14 @@ public class SortingIterative {
     }
     static void buble(int[] arr){
         for (int i = 0; i < arr.length-1; i++) {
+            boolean swap=false;
             for (int j = 0; j < arr.length-i-1; j++) {
-                if(arr[j]>arr[j+1]) swap(arr,j,j+1);
-
+                if(arr[j]>arr[j+1]) {
+                    swap(arr, j, j + 1);
+                    swap=true;
+                }
             }
+            if(!swap) break;
         }
     }
 
@@ -50,17 +54,18 @@ public class SortingIterative {
                     maxI=j;
                 }
             }
-
             swap(arr,maxI,arr.length-i-1);
         }
     }
     static void insertion(int[] arr){
         for (int i = 1; i < arr.length; i++) {
             int j = i;
-            while(j>0&&arr[j]<arr[j-1]){
-                swap(arr,j,j-1);
+            int temp = arr[i];
+            while(j>0&&temp<arr[j-1]){
+                arr[j]=arr[j-1];
                 j--;
             }
+            arr[j]= temp;
         }
     }
 

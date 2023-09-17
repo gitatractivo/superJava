@@ -17,18 +17,15 @@ public class SearchingIterative {
         System.out.println("219303019");
         System.out.println();
     }
-
-
     static int linear(int[] arr,int target){
         for (int i = 0; i < arr.length; i++) {
             if(arr[i]==target) return i;
         }
         return -1;
     }
-
     static int binary(int[] arr,int target){
         int s = 0, e=arr.length-1;
-        while(s<e){
+        while(s<=e){
             int m = s+(e-s)/2;
             if(target==arr[m])  return m;
             if(target>arr[m]){
@@ -37,8 +34,6 @@ public class SearchingIterative {
             else {
                 e=m-1;
             }
-
-
         }
         return -1;
     }
